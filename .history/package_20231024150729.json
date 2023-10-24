@@ -8,7 +8,7 @@
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
     "test-e2e-cli": "cypress run",
-    "test-e2e-cli-noroff": "cypress run --spec ./cypress/e2e/3-testing/no.wikipedia.cy.js"
+    "test-e2e-cli-noroff": "cypress run --spec ./D:-VSCode2ndYearCourses\u0002-03-WorkflowModule-3cypress-e2ecypresse2e\u0003-testingno-wikipedia.cy.js"
   },
   "keywords": [],
   "author": "",

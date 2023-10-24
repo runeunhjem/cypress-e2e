@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.2",
+    "eslint-plugin-cypress": "^2.15.1"
+  }
 }

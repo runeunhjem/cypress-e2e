@@ -22,7 +22,7 @@ describe("Add 3 Games to Cart Functionality", () => {
       cy.wrap(element).should("have.value", "1");
     });
 
-    // Verify that there are 3 items in the cart
+    // Verify that there are three items in the cart
     cy.get(".cart-total__quantity").should("contain", "3 items");
   });
 });

@@ -27,7 +27,7 @@ describe("Checkout Process", () => {
     // Check if the payment successful message is shown
     cy.get("#payment-complete").should("contain", "Your payment was successful");
 
-    // Check if the page redirects to checkout_success.html with a 5-second delay
-    cy.url({ timeout: 5000 }).should("include", "checkout_success.html");
+    // Check if the page redirects to checkout_success.html
+    cy.url().should("include", "https://gamehub-wp-ca.netlify.app/checkout_success.html");
   });
 });

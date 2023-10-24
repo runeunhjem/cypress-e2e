@@ -1,8 +1,11 @@
-describe("Remove a Game from Cart Functionality", () => {
+// const { it } = require("node:test");
 
-  it("Should add two games to the cart, then remove the first", () => {
+describe("Remove a Game from Cart Functionality", () => {
+  // beforeEach(() => {
+  // });
+
+  it("Should add two games to the cart", () => {
     cy.visit("https://gamehub-wp-ca.netlify.app/psn-list.html");
-    
     // Add the first game to the cart
     cy.get(".game-cards:first").as("firstGame");
     cy.get("@firstGame").find(".add-to-cart").click();
@@ -19,10 +22,13 @@ describe("Remove a Game from Cart Functionality", () => {
 
     // Verify that the games has a "howmany" value equal to 1
     cy.get(".howmany").should("have.value", "1");
+  });
 
+  it("Should remove a game from the cart", () => {
+    
     // Remove the first game from the cart
     cy.get(".cart-item:first").as("firstCartItem");
-    cy.get("@firstCartItem").find(".remove-button").click();
+    cy.get("@firstCartItem").find(".remove-from-cart").click();
 
     // Verify that there is only one item in the cart
     cy.get(".cart-total__quantity").should("contain", "1 item");

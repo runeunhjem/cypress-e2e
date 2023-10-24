@@ -15,19 +15,20 @@ describe("Checkout Process", () => {
 
     // Click the "Pay Now" button
     cy.get("#paynow-button").click();
-    // Check if input fields, except for the search input, go green when clicking Pay Now
-    cy.get("input:not([name='query'])").each(($input) => {
+    // Check if input fields go green when clicking Pay Now
+    cy.get("input").each(($input) => {
       cy.wrap($input).should("have.css", "background-color", "rgb(143, 255, 152)");
     });
 
     // Assertions:
     // Click the "Pay Now" button
     cy.get("#paynow-button").click();
+    
 
     // Check if the payment successful message is shown
-    cy.get("#payment-complete").should("contain", "Your payment was successful");
+    cy.get("#payment-complete").should("contain", "Your payment was successful\nWe are printing your receipt");
 
-    // Check if the page redirects to checkout_success.html with a 5-second delay
-    cy.url({ timeout: 5000 }).should("include", "checkout_success.html");
+    // Check if the page redirects to checkout_success.html
+    cy.url().should("include", "checkout_success.html");
   });
 });

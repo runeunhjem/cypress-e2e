@@ -17,12 +17,13 @@ describe("Add 3 Games to Cart Functionality", () => {
     // Go to the cart page
     cy.get("a[aria-label='Open shopping cart']").click();
 
-    // Verify that all 3 games have a "howmany" value equal to 1
+
+    // Verify that all games have a "howmany" value equal to 1
     cy.get(".howmany").each((element) => {
       cy.wrap(element).should("have.value", "1");
     });
 
-    // Verify that there are 3 items in the cart
+    // Verify that there are three items in the cart
     cy.get(".cart-total__quantity").should("contain", "3 items");
   });
 });

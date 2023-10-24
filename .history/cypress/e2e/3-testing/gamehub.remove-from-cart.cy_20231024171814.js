@@ -1,8 +1,7 @@
 describe("Remove a Game from Cart Functionality", () => {
-
-  it("Should add two games to the cart, then remove the first", () => {
+  
+  it("Should add two games to the cart", () => {
     cy.visit("https://gamehub-wp-ca.netlify.app/psn-list.html");
-    
     // Add the first game to the cart
     cy.get(".game-cards:first").as("firstGame");
     cy.get("@firstGame").find(".add-to-cart").click();
